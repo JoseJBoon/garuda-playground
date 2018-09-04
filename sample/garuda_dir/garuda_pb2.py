@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='garuda.proto',
   package='garuda',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cgaruda.proto\x12\x06garuda\"\x06\n\x04Void\"\x10\n\x02ID\x12\n\n\x02id\x18\x01 \x01(\x03\"\xaa\x01\n\x08LogEntry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tion_flag\x18\x02 \x01(\x05\x12\x13\n\x0b\x61\x63tion_time\x18\x03 \x01(\t\x12\x16\n\x0e\x63hange_message\x18\x04 \x01(\t\x12\x17\n\x0f\x63ontent_type_id\x18\x05 \x01(\x03\x12\x11\n\tobject_id\x18\x06 \x01(\t\x12\x13\n\x0bobject_repr\x18\x07 \x01(\t\x12\x0f\n\x07user_id\x18\x08 \x01(\x03\"n\n\nPermission\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x63odename\x18\x02 \x01(\t\x12\x17\n\x0f\x63ontent_type_id\x18\x03 \x01(\x03\x12\r\n\x05group\x18\x04 \x03(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x0c\n\x04user\x18\x06 \x03(\t\"D\n\x05Group\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bpermissions\x18\x03 \x03(\t\x12\x0c\n\x04user\x18\x04 \x03(\t\"\x8c\x02\n\x04User\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61te_joined\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x12\n\nfirst_name\x18\x04 \x01(\t\x12\x0e\n\x06groups\x18\x05 \x03(\t\x12\x11\n\tis_active\x18\x06 \x01(\x08\x12\x10\n\x08is_staff\x18\x07 \x01(\x08\x12\x14\n\x0cis_superuser\x18\x08 \x01(\x08\x12\x12\n\nlast_login\x18\t \x01(\t\x12\x11\n\tlast_name\x18\n \x01(\t\x12\x10\n\x08logentry\x18\x0b \x03(\t\x12\x10\n\x08password\x18\x0c \x01(\t\x12\x18\n\x10user_permissions\x18\r \x03(\t\x12\x10\n\x08username\x18\x0e \x01(\t\"a\n\x0b\x43ontentType\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tapp_label\x18\x02 \x01(\t\x12\x10\n\x08logentry\x18\x03 \x03(\t\x12\r\n\x05model\x18\x04 \x01(\t\x12\x12\n\npermission\x18\x05 \x03(\t\"U\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x65xpire_date\x18\x02 \x01(\t\x12\x14\n\x0csession_data\x18\x03 \x01(\t\x12\x13\n\x0bsession_key\x18\x04 \x01(\t\"\\\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x12%\n\x06status\x18\x03 \x01(\x0e\x32\x15.garuda.ArticleStatus\x12\r\n\x05title\x18\x04 \x01(\t*k\n\rArticleStatus\x12\x18\n\x14\x41rticleStatusUNKNOWN\x10\x00\x12\x0f\n\x0bUNPUBLISHED\x10\x01\x12\r\n\tPUBLISHED\x10\x02\x12\x13\n\x0fREVIEW_REQUIRED\x10\x03\x12\x0b\n\x07\x44\x45LETED\x10\x04\x32\xeb\r\n\x06Garuda\x12*\n\x0e\x44\x65leteLogEntry\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12\x30\n\x0eUpdateLogEntry\x12\x10.garuda.LogEntry\x1a\x0c.garuda.Void\x12,\n\x0cReadLogEntry\x12\n.garuda.ID\x1a\x10.garuda.LogEntry\x12\x34\n\x0e\x43reateLogEntry\x12\x10.garuda.LogEntry\x1a\x10.garuda.LogEntry\x12\x37\n\x13ReadLogEntrysFilter\x12\x0c.garuda.Void\x1a\x10.garuda.LogEntry0\x01\x12,\n\x10\x44\x65letePermission\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12\x34\n\x10UpdatePermission\x12\x12.garuda.Permission\x1a\x0c.garuda.Void\x12\x30\n\x0eReadPermission\x12\n.garuda.ID\x1a\x12.garuda.Permission\x12:\n\x10\x43reatePermission\x12\x12.garuda.Permission\x1a\x12.garuda.Permission\x12;\n\x15ReadPermissionsFilter\x12\x0c.garuda.Void\x1a\x12.garuda.Permission0\x01\x12\'\n\x0b\x44\x65leteGroup\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12*\n\x0bUpdateGroup\x12\r.garuda.Group\x1a\x0c.garuda.Void\x12&\n\tReadGroup\x12\n.garuda.ID\x1a\r.garuda.Group\x12+\n\x0b\x43reateGroup\x12\r.garuda.Group\x1a\r.garuda.Group\x12\x31\n\x10ReadGroupsFilter\x12\x0c.garuda.Void\x1a\r.garuda.Group0\x01\x12&\n\nDeleteUser\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12(\n\nUpdateUser\x12\x0c.garuda.User\x1a\x0c.garuda.Void\x12$\n\x08ReadUser\x12\n.garuda.ID\x1a\x0c.garuda.User\x12(\n\nCreateUser\x12\x0c.garuda.User\x1a\x0c.garuda.User\x12/\n\x0fReadUsersFilter\x12\x0c.garuda.Void\x1a\x0c.garuda.User0\x01\x12-\n\x11\x44\x65leteContentType\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12\x36\n\x11UpdateContentType\x12\x13.garuda.ContentType\x1a\x0c.garuda.Void\x12\x32\n\x0fReadContentType\x12\n.garuda.ID\x1a\x13.garuda.ContentType\x12=\n\x11\x43reateContentType\x12\x13.garuda.ContentType\x1a\x13.garuda.ContentType\x12=\n\x16ReadContentTypesFilter\x12\x0c.garuda.Void\x1a\x13.garuda.ContentType0\x01\x12)\n\rDeleteSession\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12.\n\rUpdateSession\x12\x0f.garuda.Session\x1a\x0c.garuda.Void\x12*\n\x0bReadSession\x12\n.garuda.ID\x1a\x0f.garuda.Session\x12\x31\n\rCreateSession\x12\x0f.garuda.Session\x1a\x0f.garuda.Session\x12\x35\n\x12ReadSessionsFilter\x12\x0c.garuda.Void\x1a\x0f.garuda.Session0\x01\x12)\n\rDeleteArticle\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12.\n\rUpdateArticle\x12\x0f.garuda.Article\x1a\x0c.garuda.Void\x12*\n\x0bReadArticle\x12\n.garuda.ID\x1a\x0f.garuda.Article\x12\x31\n\rCreateArticle\x12\x0f.garuda.Article\x1a\x0f.garuda.Article\x12\x35\n\x12ReadArticlesFilter\x12\x0c.garuda.Void\x1a\x0f.garuda.Article0\x01\x12,\n\x0e\x43ustomCallDemo\x12\x0c.garuda.Void\x1a\x0c.garuda.VoidB,\n\x15\x63om.dhilipsiva.garudaB\x0bGarudaProtoP\x01\xa2\x02\x03\x44SGb\x06proto3')
+  serialized_pb=_b('\n\x0cgaruda.proto\x12\x06garuda\"\x06\n\x04Void\"\x10\n\x02ID\x12\n\n\x02id\x18\x01 \x01(\x03\"\xaa\x01\n\x08LogEntry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tion_flag\x18\x02 \x01(\x05\x12\x13\n\x0b\x61\x63tion_time\x18\x03 \x01(\t\x12\x16\n\x0e\x63hange_message\x18\x04 \x01(\t\x12\x17\n\x0f\x63ontent_type_id\x18\x05 \x01(\x03\x12\x11\n\tobject_id\x18\x06 \x01(\t\x12\x13\n\x0bobject_repr\x18\x07 \x01(\t\x12\x0f\n\x07user_id\x18\x08 \x01(\x03\"n\n\nPermission\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x63odename\x18\x02 \x01(\t\x12\x17\n\x0f\x63ontent_type_id\x18\x03 \x01(\x03\x12\r\n\x05group\x18\x04 \x03(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x0c\n\x04user\x18\x06 \x03(\t\"D\n\x05Group\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bpermissions\x18\x03 \x03(\t\x12\x0c\n\x04user\x18\x04 \x03(\t\"\x8c\x02\n\x04User\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61te_joined\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x12\n\nfirst_name\x18\x04 \x01(\t\x12\x0e\n\x06groups\x18\x05 \x03(\t\x12\x11\n\tis_active\x18\x06 \x01(\x08\x12\x10\n\x08is_staff\x18\x07 \x01(\x08\x12\x14\n\x0cis_superuser\x18\x08 \x01(\x08\x12\x12\n\nlast_login\x18\t \x01(\t\x12\x11\n\tlast_name\x18\n \x01(\t\x12\x10\n\x08logentry\x18\x0b \x03(\t\x12\x10\n\x08password\x18\x0c \x01(\t\x12\x18\n\x10user_permissions\x18\r \x03(\t\x12\x10\n\x08username\x18\x0e \x01(\t\"a\n\x0b\x43ontentType\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tapp_label\x18\x02 \x01(\t\x12\x10\n\x08logentry\x18\x03 \x03(\t\x12\r\n\x05model\x18\x04 \x01(\t\x12\x12\n\npermission\x18\x05 \x03(\t\"U\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x65xpire_date\x18\x02 \x01(\t\x12\x14\n\x0csession_data\x18\x03 \x01(\t\x12\x13\n\x0bsession_key\x18\x04 \x01(\t\"\\\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x12%\n\x06status\x18\x03 \x01(\x0e\x32\x15.garuda.ArticleStatus\x12\r\n\x05title\x18\x04 \x01(\t\"D\n\x04\x42ook\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x63hapter\x18\x02 \x03(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x11\n\tpublished\x18\x04 \x01(\t\"B\n\x07\x43hapter\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x62ook_id\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04text\x18\x04 \x01(\t\"N\n\x06Person\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03\x61ge\x18\x02 \x01(\x05\x12\x0c\n\x04\x63ity\x18\x03 \x01(\t\x12\x0f\n\x07\x66riends\x18\x04 \x03(\t\x12\x0c\n\x04name\x18\x05 \x01(\t*k\n\rArticleStatus\x12\x18\n\x14\x41rticleStatusUNKNOWN\x10\x00\x12\x0f\n\x0bUNPUBLISHED\x10\x01\x12\r\n\tPUBLISHED\x10\x02\x12\x13\n\x0fREVIEW_REQUIRED\x10\x03\x12\x0b\n\x07\x44\x45LETED\x10\x04\x32\xe7\x12\n\x06Garuda\x12*\n\x0e\x44\x65leteLogEntry\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12\x30\n\x0eUpdateLogEntry\x12\x10.garuda.LogEntry\x1a\x0c.garuda.Void\x12,\n\x0cReadLogEntry\x12\n.garuda.ID\x1a\x10.garuda.LogEntry\x12\x34\n\x0e\x43reateLogEntry\x12\x10.garuda.LogEntry\x1a\x10.garuda.LogEntry\x12\x37\n\x13ReadLogEntrysFilter\x12\x0c.garuda.Void\x1a\x10.garuda.LogEntry0\x01\x12,\n\x10\x44\x65letePermission\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12\x34\n\x10UpdatePermission\x12\x12.garuda.Permission\x1a\x0c.garuda.Void\x12\x30\n\x0eReadPermission\x12\n.garuda.ID\x1a\x12.garuda.Permission\x12:\n\x10\x43reatePermission\x12\x12.garuda.Permission\x1a\x12.garuda.Permission\x12;\n\x15ReadPermissionsFilter\x12\x0c.garuda.Void\x1a\x12.garuda.Permission0\x01\x12\'\n\x0b\x44\x65leteGroup\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12*\n\x0bUpdateGroup\x12\r.garuda.Group\x1a\x0c.garuda.Void\x12&\n\tReadGroup\x12\n.garuda.ID\x1a\r.garuda.Group\x12+\n\x0b\x43reateGroup\x12\r.garuda.Group\x1a\r.garuda.Group\x12\x31\n\x10ReadGroupsFilter\x12\x0c.garuda.Void\x1a\r.garuda.Group0\x01\x12&\n\nDeleteUser\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12(\n\nUpdateUser\x12\x0c.garuda.User\x1a\x0c.garuda.Void\x12$\n\x08ReadUser\x12\n.garuda.ID\x1a\x0c.garuda.User\x12(\n\nCreateUser\x12\x0c.garuda.User\x1a\x0c.garuda.User\x12/\n\x0fReadUsersFilter\x12\x0c.garuda.Void\x1a\x0c.garuda.User0\x01\x12-\n\x11\x44\x65leteContentType\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12\x36\n\x11UpdateContentType\x12\x13.garuda.ContentType\x1a\x0c.garuda.Void\x12\x32\n\x0fReadContentType\x12\n.garuda.ID\x1a\x13.garuda.ContentType\x12=\n\x11\x43reateContentType\x12\x13.garuda.ContentType\x1a\x13.garuda.ContentType\x12=\n\x16ReadContentTypesFilter\x12\x0c.garuda.Void\x1a\x13.garuda.ContentType0\x01\x12)\n\rDeleteSession\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12.\n\rUpdateSession\x12\x0f.garuda.Session\x1a\x0c.garuda.Void\x12*\n\x0bReadSession\x12\n.garuda.ID\x1a\x0f.garuda.Session\x12\x31\n\rCreateSession\x12\x0f.garuda.Session\x1a\x0f.garuda.Session\x12\x35\n\x12ReadSessionsFilter\x12\x0c.garuda.Void\x1a\x0f.garuda.Session0\x01\x12)\n\rDeleteArticle\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12.\n\rUpdateArticle\x12\x0f.garuda.Article\x1a\x0c.garuda.Void\x12*\n\x0bReadArticle\x12\n.garuda.ID\x1a\x0f.garuda.Article\x12\x31\n\rCreateArticle\x12\x0f.garuda.Article\x1a\x0f.garuda.Article\x12\x35\n\x12ReadArticlesFilter\x12\x0c.garuda.Void\x1a\x0f.garuda.Article0\x01\x12&\n\nDeleteBook\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12(\n\nUpdateBook\x12\x0c.garuda.Book\x1a\x0c.garuda.Void\x12$\n\x08ReadBook\x12\n.garuda.ID\x1a\x0c.garuda.Book\x12(\n\nCreateBook\x12\x0c.garuda.Book\x1a\x0c.garuda.Book\x12/\n\x0fReadBooksFilter\x12\x0c.garuda.Void\x1a\x0c.garuda.Book0\x01\x12)\n\rDeleteChapter\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12.\n\rUpdateChapter\x12\x0f.garuda.Chapter\x1a\x0c.garuda.Void\x12*\n\x0bReadChapter\x12\n.garuda.ID\x1a\x0f.garuda.Chapter\x12\x31\n\rCreateChapter\x12\x0f.garuda.Chapter\x1a\x0f.garuda.Chapter\x12\x35\n\x12ReadChaptersFilter\x12\x0c.garuda.Void\x1a\x0f.garuda.Chapter0\x01\x12(\n\x0c\x44\x65letePerson\x12\n.garuda.ID\x1a\x0c.garuda.Void\x12,\n\x0cUpdatePerson\x12\x0e.garuda.Person\x1a\x0c.garuda.Void\x12(\n\nReadPerson\x12\n.garuda.ID\x1a\x0e.garuda.Person\x12.\n\x0c\x43reatePerson\x12\x0e.garuda.Person\x1a\x0e.garuda.Person\x12\x32\n\x10ReadPeopleFilter\x12\x0c.garuda.Void\x1a\x0e.garuda.Person0\x01\x42,\n\x15\x63om.dhilipsiva.garudaB\x0bGarudaProtoP\x01\xa2\x02\x03\x44SGb\x06proto3')
 )
 
 _ARTICLESTATUS = _descriptor.EnumDescriptor(
@@ -52,8 +52,8 @@ _ARTICLESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=956,
-  serialized_end=1063,
+  serialized_start=1174,
+  serialized_end=1281,
 )
 _sym_db.RegisterEnumDescriptor(_ARTICLESTATUS)
 
@@ -603,6 +603,169 @@ _ARTICLE = _descriptor.Descriptor(
   serialized_end=954,
 )
 
+
+_BOOK = _descriptor.Descriptor(
+  name='Book',
+  full_name='garuda.Book',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='garuda.Book.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='chapter', full_name='garuda.Book.chapter', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='garuda.Book.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='published', full_name='garuda.Book.published', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=956,
+  serialized_end=1024,
+)
+
+
+_CHAPTER = _descriptor.Descriptor(
+  name='Chapter',
+  full_name='garuda.Chapter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='garuda.Chapter.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='book_id', full_name='garuda.Chapter.book_id', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='garuda.Chapter.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='text', full_name='garuda.Chapter.text', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1026,
+  serialized_end=1092,
+)
+
+
+_PERSON = _descriptor.Descriptor(
+  name='Person',
+  full_name='garuda.Person',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='garuda.Person.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='age', full_name='garuda.Person.age', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='city', full_name='garuda.Person.city', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='friends', full_name='garuda.Person.friends', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='garuda.Person.name', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1094,
+  serialized_end=1172,
+)
+
 _ARTICLE.fields_by_name['status'].enum_type = _ARTICLESTATUS
 DESCRIPTOR.message_types_by_name['Void'] = _VOID
 DESCRIPTOR.message_types_by_name['ID'] = _ID
@@ -613,6 +776,9 @@ DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['ContentType'] = _CONTENTTYPE
 DESCRIPTOR.message_types_by_name['Session'] = _SESSION
 DESCRIPTOR.message_types_by_name['Article'] = _ARTICLE
+DESCRIPTOR.message_types_by_name['Book'] = _BOOK
+DESCRIPTOR.message_types_by_name['Chapter'] = _CHAPTER
+DESCRIPTOR.message_types_by_name['Person'] = _PERSON
 DESCRIPTOR.enum_types_by_name['ArticleStatus'] = _ARTICLESTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -679,6 +845,27 @@ Article = _reflection.GeneratedProtocolMessageType('Article', (_message.Message,
   ))
 _sym_db.RegisterMessage(Article)
 
+Book = _reflection.GeneratedProtocolMessageType('Book', (_message.Message,), dict(
+  DESCRIPTOR = _BOOK,
+  __module__ = 'garuda_pb2'
+  # @@protoc_insertion_point(class_scope:garuda.Book)
+  ))
+_sym_db.RegisterMessage(Book)
+
+Chapter = _reflection.GeneratedProtocolMessageType('Chapter', (_message.Message,), dict(
+  DESCRIPTOR = _CHAPTER,
+  __module__ = 'garuda_pb2'
+  # @@protoc_insertion_point(class_scope:garuda.Chapter)
+  ))
+_sym_db.RegisterMessage(Chapter)
+
+Person = _reflection.GeneratedProtocolMessageType('Person', (_message.Message,), dict(
+  DESCRIPTOR = _PERSON,
+  __module__ = 'garuda_pb2'
+  # @@protoc_insertion_point(class_scope:garuda.Person)
+  ))
+_sym_db.RegisterMessage(Person)
+
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\025com.dhilipsiva.garudaB\013GarudaProtoP\001\242\002\003DSG'))
@@ -689,8 +876,8 @@ _GARUDA = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=1066,
-  serialized_end=2837,
+  serialized_start=1284,
+  serialized_end=3691,
   methods=[
   _descriptor.MethodDescriptor(
     name='DeleteLogEntry',
@@ -1008,12 +1195,138 @@ _GARUDA = _descriptor.ServiceDescriptor(
     options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='CustomCallDemo',
-    full_name='garuda.Garuda.CustomCallDemo',
+    name='DeleteBook',
+    full_name='garuda.Garuda.DeleteBook',
     index=35,
     containing_service=None,
-    input_type=_VOID,
+    input_type=_ID,
     output_type=_VOID,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateBook',
+    full_name='garuda.Garuda.UpdateBook',
+    index=36,
+    containing_service=None,
+    input_type=_BOOK,
+    output_type=_VOID,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ReadBook',
+    full_name='garuda.Garuda.ReadBook',
+    index=37,
+    containing_service=None,
+    input_type=_ID,
+    output_type=_BOOK,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateBook',
+    full_name='garuda.Garuda.CreateBook',
+    index=38,
+    containing_service=None,
+    input_type=_BOOK,
+    output_type=_BOOK,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ReadBooksFilter',
+    full_name='garuda.Garuda.ReadBooksFilter',
+    index=39,
+    containing_service=None,
+    input_type=_VOID,
+    output_type=_BOOK,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeleteChapter',
+    full_name='garuda.Garuda.DeleteChapter',
+    index=40,
+    containing_service=None,
+    input_type=_ID,
+    output_type=_VOID,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateChapter',
+    full_name='garuda.Garuda.UpdateChapter',
+    index=41,
+    containing_service=None,
+    input_type=_CHAPTER,
+    output_type=_VOID,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ReadChapter',
+    full_name='garuda.Garuda.ReadChapter',
+    index=42,
+    containing_service=None,
+    input_type=_ID,
+    output_type=_CHAPTER,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateChapter',
+    full_name='garuda.Garuda.CreateChapter',
+    index=43,
+    containing_service=None,
+    input_type=_CHAPTER,
+    output_type=_CHAPTER,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ReadChaptersFilter',
+    full_name='garuda.Garuda.ReadChaptersFilter',
+    index=44,
+    containing_service=None,
+    input_type=_VOID,
+    output_type=_CHAPTER,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeletePerson',
+    full_name='garuda.Garuda.DeletePerson',
+    index=45,
+    containing_service=None,
+    input_type=_ID,
+    output_type=_VOID,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdatePerson',
+    full_name='garuda.Garuda.UpdatePerson',
+    index=46,
+    containing_service=None,
+    input_type=_PERSON,
+    output_type=_VOID,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ReadPerson',
+    full_name='garuda.Garuda.ReadPerson',
+    index=47,
+    containing_service=None,
+    input_type=_ID,
+    output_type=_PERSON,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreatePerson',
+    full_name='garuda.Garuda.CreatePerson',
+    index=48,
+    containing_service=None,
+    input_type=_PERSON,
+    output_type=_PERSON,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ReadPeopleFilter',
+    full_name='garuda.Garuda.ReadPeopleFilter',
+    index=49,
+    containing_service=None,
+    input_type=_VOID,
+    output_type=_PERSON,
     options=None,
   ),
 ])

@@ -311,5 +311,9 @@ class Command(BaseCommand):
 {GARUDA_RPC}
 {GARUDA_PROTO_FOOTER}
                     '''.strip())
+
+        print('construct protobuf files')
+        # bug: ACTION_FLAG_CHOICES of EntryLog does not get created within the .proto
         protoc.main(protoc_arguments())
+        print('fixin grpc imports')
         fix_grpc_import()

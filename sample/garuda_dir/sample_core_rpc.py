@@ -55,3 +55,165 @@ class ArticleGaruda:
     def DeleteArticle(self, id, context):
         delete_article(id.id)
         return Void()
+
+from garuda_dir.garuda_pb2 import Book, Void  # NOQA
+from garuda_dir.sample_core_crud import (  # NOQA
+    read_book,
+    delete_book,
+    create_book,
+    update_book,
+    read_books_filter,
+)
+
+
+def book_to_dict(obj):
+    # Cycle through fields directly
+    d = {  }
+    if obj is None:
+        return d
+    is_dj_obj = obj.__module__.endswith('models')
+    foriegn_keys = []
+    for field in ['id', 'name', 'published']:  # NOQA
+        value = getattr(obj, field, None)
+        if field in [None, 'None']:
+            continue
+        d[field] = value
+        if is_dj_obj and (field == 'id' or field in foriegn_keys):
+            d[field] = str(value)
+        elif is_dj_obj and field in ['created_on', 'updated_on']:
+            d[field] = value.isoformat()
+    return d
+
+
+class BookGaruda:
+
+    def ReadBooksFilter(self, void, context):
+        objs = read_books_filter()
+        return [Book(
+            **book_to_dict(obj)) for obj in objs]
+
+    def ReadBook(self, id, context):
+        obj = read_book(id=id.id)
+        return Book(**book_to_dict(obj))
+
+    def CreateBook(self, obj, context):
+        obj = create_book(**book_to_dict(obj))
+        return Book(**book_to_dict(obj))
+
+    def UpdateBook(self, obj, context):
+        obj_dict = book_to_dict(obj)
+        del obj_dict['id']
+        obj = update_book(obj.id, **obj_dict)
+        return Void()
+
+    def DeleteBook(self, id, context):
+        delete_book(id.id)
+        return Void()
+
+from garuda_dir.garuda_pb2 import Chapter, Void  # NOQA
+from garuda_dir.sample_core_crud import (  # NOQA
+    read_chapter,
+    delete_chapter,
+    create_chapter,
+    update_chapter,
+    read_chapters_filter,
+)
+
+
+def chapter_to_dict(obj):
+    # Cycle through fields directly
+    d = {  }
+    if obj is None:
+        return d
+    is_dj_obj = obj.__module__.endswith('models')
+    foriegn_keys = ['book_id']
+    for field in ['book_id', 'id', 'name', 'text']:  # NOQA
+        value = getattr(obj, field, None)
+        if field in [None, 'None']:
+            continue
+        d[field] = value
+        if is_dj_obj and (field == 'id' or field in foriegn_keys):
+            d[field] = str(value)
+        elif is_dj_obj and field in ['created_on', 'updated_on']:
+            d[field] = value.isoformat()
+    return d
+
+
+class ChapterGaruda:
+
+    def ReadChaptersFilter(self, void, context):
+        objs = read_chapters_filter()
+        return [Chapter(
+            **chapter_to_dict(obj)) for obj in objs]
+
+    def ReadChapter(self, id, context):
+        obj = read_chapter(id=id.id)
+        return Chapter(**chapter_to_dict(obj))
+
+    def CreateChapter(self, obj, context):
+        obj = create_chapter(**chapter_to_dict(obj))
+        return Chapter(**chapter_to_dict(obj))
+
+    def UpdateChapter(self, obj, context):
+        obj_dict = chapter_to_dict(obj)
+        del obj_dict['id']
+        obj = update_chapter(obj.id, **obj_dict)
+        return Void()
+
+    def DeleteChapter(self, id, context):
+        delete_chapter(id.id)
+        return Void()
+
+from garuda_dir.garuda_pb2 import Person, Void  # NOQA
+from garuda_dir.sample_core_crud import (  # NOQA
+    read_person,
+    delete_person,
+    create_person,
+    update_person,
+    read_people_filter,
+)
+
+
+def person_to_dict(obj):
+    # Cycle through fields directly
+    d = {  }
+    if obj is None:
+        return d
+    is_dj_obj = obj.__module__.endswith('models')
+    foriegn_keys = []
+    for field in ['age', 'city', 'friends', 'id', 'name']:  # NOQA
+        value = getattr(obj, field, None)
+        if field in [None, 'None']:
+            continue
+        d[field] = value
+        if is_dj_obj and (field == 'id' or field in foriegn_keys):
+            d[field] = str(value)
+        elif is_dj_obj and field in ['created_on', 'updated_on']:
+            d[field] = value.isoformat()
+    return d
+
+
+class PersonGaruda:
+
+    def ReadPeopleFilter(self, void, context):
+        objs = read_people_filter()
+        return [Person(
+            **person_to_dict(obj)) for obj in objs]
+
+    def ReadPerson(self, id, context):
+        obj = read_person(id=id.id)
+        return Person(**person_to_dict(obj))
+
+    def CreatePerson(self, obj, context):
+        obj = create_person(**person_to_dict(obj))
+        return Person(**person_to_dict(obj))
+
+    def UpdatePerson(self, obj, context):
+        obj_dict = person_to_dict(obj)
+        del obj_dict['id']
+        obj = update_person(obj.id, **obj_dict)
+        return Void()
+
+    def DeletePerson(self, id, context):
+        delete_person(id.id)
+        return Void()

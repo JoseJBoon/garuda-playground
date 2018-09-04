@@ -89,6 +89,28 @@ message Article {
     string title = 4;
 }
 
+message Book {
+    string id = 1;
+    repeated string chapter = 2;
+    string name = 3;
+    string published = 4;
+}
+
+message Chapter {
+    string id = 1;
+    int64 book_id = 2;
+    string name = 3;
+    string text = 4;
+}
+
+message Person {
+    string id = 1;
+    int32 age = 2;
+    string city = 3;
+    repeated string friends = 4;
+    string name = 5;
+}
+
 service Garuda{
   rpc DeleteLogEntry(ID) returns (Void);
   rpc UpdateLogEntry(LogEntry) returns (Void);
@@ -131,7 +153,22 @@ service Garuda{
   rpc ReadArticle(ID) returns (Article);
   rpc CreateArticle(Article) returns (Article);
   rpc ReadArticlesFilter(Void) returns (stream Article);
-  
-        rpc CustomCallDemo(Void) returns (Void);
-        
+
+  rpc DeleteBook(ID) returns (Void);
+  rpc UpdateBook(Book) returns (Void);
+  rpc ReadBook(ID) returns (Book);
+  rpc CreateBook(Book) returns (Book);
+  rpc ReadBooksFilter(Void) returns (stream Book);
+
+  rpc DeleteChapter(ID) returns (Void);
+  rpc UpdateChapter(Chapter) returns (Void);
+  rpc ReadChapter(ID) returns (Chapter);
+  rpc CreateChapter(Chapter) returns (Chapter);
+  rpc ReadChaptersFilter(Void) returns (stream Chapter);
+
+  rpc DeletePerson(ID) returns (Void);
+  rpc UpdatePerson(Person) returns (Void);
+  rpc ReadPerson(ID) returns (Person);
+  rpc CreatePerson(Person) returns (Person);
+  rpc ReadPeopleFilter(Void) returns (stream Person);
 }

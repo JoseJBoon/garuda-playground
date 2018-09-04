@@ -39,3 +39,117 @@ def update_article(id, *args, **kwargs):
 
 def delete_article(id):
     return Article.objects.get(id=id).delete()
+
+from sample.core.models import Book  # NOQA
+GARUDA_IGNORE_FIELDS = ['created_on', 'updated_on', 'id']  # NOQA
+
+
+def read_book(*args, **kwargs):
+    try:
+        return Book.objects.get(*args, **kwargs)
+    except Book.DoesNotExist:
+        return None
+
+
+def read_books_filter(*args, **kwargs):
+    return Book.objects.filter(*args, **kwargs)
+
+
+def create_book(*args, **kwargs):
+    for ignore_field in GARUDA_IGNORE_FIELDS:
+        if ignore_field in kwargs:
+            del kwargs[ignore_field]
+    for key in list(kwargs):
+        if kwargs[key] in [None, 'None', '']:
+            del kwargs[key]
+    return Book.objects.create(*args, **kwargs)
+
+
+def update_book(id, *args, **kwargs):
+    for ignore_field in GARUDA_IGNORE_FIELDS:
+        if ignore_field in kwargs:
+            del kwargs[ignore_field]
+    for key in list(kwargs):
+        if kwargs[key] in [None, 'None', '']:
+            del kwargs[key]
+    return Book.objects.filter(id=id).update(*args, **kwargs)
+
+
+def delete_book(id):
+    return Book.objects.get(id=id).delete()
+
+from sample.core.models import Chapter  # NOQA
+GARUDA_IGNORE_FIELDS = ['created_on', 'updated_on', 'id']  # NOQA
+
+
+def read_chapter(*args, **kwargs):
+    try:
+        return Chapter.objects.get(*args, **kwargs)
+    except Chapter.DoesNotExist:
+        return None
+
+
+def read_chapters_filter(*args, **kwargs):
+    return Chapter.objects.filter(*args, **kwargs)
+
+
+def create_chapter(*args, **kwargs):
+    for ignore_field in GARUDA_IGNORE_FIELDS:
+        if ignore_field in kwargs:
+            del kwargs[ignore_field]
+    for key in list(kwargs):
+        if kwargs[key] in [None, 'None', '']:
+            del kwargs[key]
+    return Chapter.objects.create(*args, **kwargs)
+
+
+def update_chapter(id, *args, **kwargs):
+    for ignore_field in GARUDA_IGNORE_FIELDS:
+        if ignore_field in kwargs:
+            del kwargs[ignore_field]
+    for key in list(kwargs):
+        if kwargs[key] in [None, 'None', '']:
+            del kwargs[key]
+    return Chapter.objects.filter(id=id).update(*args, **kwargs)
+
+
+def delete_chapter(id):
+    return Chapter.objects.get(id=id).delete()
+
+from sample.core.models import Person  # NOQA
+GARUDA_IGNORE_FIELDS = ['created_on', 'updated_on', 'id']  # NOQA
+
+
+def read_person(*args, **kwargs):
+    try:
+        return Person.objects.get(*args, **kwargs)
+    except Person.DoesNotExist:
+        return None
+
+
+def read_people_filter(*args, **kwargs):
+    return Person.objects.filter(*args, **kwargs)
+
+
+def create_person(*args, **kwargs):
+    for ignore_field in GARUDA_IGNORE_FIELDS:
+        if ignore_field in kwargs:
+            del kwargs[ignore_field]
+    for key in list(kwargs):
+        if kwargs[key] in [None, 'None', '']:
+            del kwargs[key]
+    return Person.objects.create(*args, **kwargs)
+
+
+def update_person(id, *args, **kwargs):
+    for ignore_field in GARUDA_IGNORE_FIELDS:
+        if ignore_field in kwargs:
+            del kwargs[ignore_field]
+    for key in list(kwargs):
+        if kwargs[key] in [None, 'None', '']:
+            del kwargs[key]
+    return Person.objects.filter(id=id).update(*args, **kwargs)
+
+
+def delete_person(id):
+    return Person.objects.get(id=id).delete()

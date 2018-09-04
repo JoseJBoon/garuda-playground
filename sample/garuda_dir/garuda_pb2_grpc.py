@@ -189,10 +189,80 @@ class GarudaStub(object):
         request_serializer=garuda__pb2.Void.SerializeToString,
         response_deserializer=garuda__pb2.Article.FromString,
         )
-    self.CustomCallDemo = channel.unary_unary(
-        '/garuda.Garuda/CustomCallDemo',
-        request_serializer=garuda__pb2.Void.SerializeToString,
+    self.DeleteBook = channel.unary_unary(
+        '/garuda.Garuda/DeleteBook',
+        request_serializer=garuda__pb2.ID.SerializeToString,
         response_deserializer=garuda__pb2.Void.FromString,
+        )
+    self.UpdateBook = channel.unary_unary(
+        '/garuda.Garuda/UpdateBook',
+        request_serializer=garuda__pb2.Book.SerializeToString,
+        response_deserializer=garuda__pb2.Void.FromString,
+        )
+    self.ReadBook = channel.unary_unary(
+        '/garuda.Garuda/ReadBook',
+        request_serializer=garuda__pb2.ID.SerializeToString,
+        response_deserializer=garuda__pb2.Book.FromString,
+        )
+    self.CreateBook = channel.unary_unary(
+        '/garuda.Garuda/CreateBook',
+        request_serializer=garuda__pb2.Book.SerializeToString,
+        response_deserializer=garuda__pb2.Book.FromString,
+        )
+    self.ReadBooksFilter = channel.unary_stream(
+        '/garuda.Garuda/ReadBooksFilter',
+        request_serializer=garuda__pb2.Void.SerializeToString,
+        response_deserializer=garuda__pb2.Book.FromString,
+        )
+    self.DeleteChapter = channel.unary_unary(
+        '/garuda.Garuda/DeleteChapter',
+        request_serializer=garuda__pb2.ID.SerializeToString,
+        response_deserializer=garuda__pb2.Void.FromString,
+        )
+    self.UpdateChapter = channel.unary_unary(
+        '/garuda.Garuda/UpdateChapter',
+        request_serializer=garuda__pb2.Chapter.SerializeToString,
+        response_deserializer=garuda__pb2.Void.FromString,
+        )
+    self.ReadChapter = channel.unary_unary(
+        '/garuda.Garuda/ReadChapter',
+        request_serializer=garuda__pb2.ID.SerializeToString,
+        response_deserializer=garuda__pb2.Chapter.FromString,
+        )
+    self.CreateChapter = channel.unary_unary(
+        '/garuda.Garuda/CreateChapter',
+        request_serializer=garuda__pb2.Chapter.SerializeToString,
+        response_deserializer=garuda__pb2.Chapter.FromString,
+        )
+    self.ReadChaptersFilter = channel.unary_stream(
+        '/garuda.Garuda/ReadChaptersFilter',
+        request_serializer=garuda__pb2.Void.SerializeToString,
+        response_deserializer=garuda__pb2.Chapter.FromString,
+        )
+    self.DeletePerson = channel.unary_unary(
+        '/garuda.Garuda/DeletePerson',
+        request_serializer=garuda__pb2.ID.SerializeToString,
+        response_deserializer=garuda__pb2.Void.FromString,
+        )
+    self.UpdatePerson = channel.unary_unary(
+        '/garuda.Garuda/UpdatePerson',
+        request_serializer=garuda__pb2.Person.SerializeToString,
+        response_deserializer=garuda__pb2.Void.FromString,
+        )
+    self.ReadPerson = channel.unary_unary(
+        '/garuda.Garuda/ReadPerson',
+        request_serializer=garuda__pb2.ID.SerializeToString,
+        response_deserializer=garuda__pb2.Person.FromString,
+        )
+    self.CreatePerson = channel.unary_unary(
+        '/garuda.Garuda/CreatePerson',
+        request_serializer=garuda__pb2.Person.SerializeToString,
+        response_deserializer=garuda__pb2.Person.FromString,
+        )
+    self.ReadPeopleFilter = channel.unary_stream(
+        '/garuda.Garuda/ReadPeopleFilter',
+        request_serializer=garuda__pb2.Void.SerializeToString,
+        response_deserializer=garuda__pb2.Person.FromString,
         )
 
 
@@ -445,7 +515,105 @@ class GarudaServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def CustomCallDemo(self, request, context):
+  def DeleteBook(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateBook(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ReadBook(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateBook(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ReadBooksFilter(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteChapter(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateChapter(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ReadChapter(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateChapter(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ReadChaptersFilter(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeletePerson(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdatePerson(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ReadPerson(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreatePerson(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ReadPeopleFilter(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -630,10 +798,80 @@ def add_GarudaServicer_to_server(servicer, server):
           request_deserializer=garuda__pb2.Void.FromString,
           response_serializer=garuda__pb2.Article.SerializeToString,
       ),
-      'CustomCallDemo': grpc.unary_unary_rpc_method_handler(
-          servicer.CustomCallDemo,
-          request_deserializer=garuda__pb2.Void.FromString,
+      'DeleteBook': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteBook,
+          request_deserializer=garuda__pb2.ID.FromString,
           response_serializer=garuda__pb2.Void.SerializeToString,
+      ),
+      'UpdateBook': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateBook,
+          request_deserializer=garuda__pb2.Book.FromString,
+          response_serializer=garuda__pb2.Void.SerializeToString,
+      ),
+      'ReadBook': grpc.unary_unary_rpc_method_handler(
+          servicer.ReadBook,
+          request_deserializer=garuda__pb2.ID.FromString,
+          response_serializer=garuda__pb2.Book.SerializeToString,
+      ),
+      'CreateBook': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateBook,
+          request_deserializer=garuda__pb2.Book.FromString,
+          response_serializer=garuda__pb2.Book.SerializeToString,
+      ),
+      'ReadBooksFilter': grpc.unary_stream_rpc_method_handler(
+          servicer.ReadBooksFilter,
+          request_deserializer=garuda__pb2.Void.FromString,
+          response_serializer=garuda__pb2.Book.SerializeToString,
+      ),
+      'DeleteChapter': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteChapter,
+          request_deserializer=garuda__pb2.ID.FromString,
+          response_serializer=garuda__pb2.Void.SerializeToString,
+      ),
+      'UpdateChapter': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateChapter,
+          request_deserializer=garuda__pb2.Chapter.FromString,
+          response_serializer=garuda__pb2.Void.SerializeToString,
+      ),
+      'ReadChapter': grpc.unary_unary_rpc_method_handler(
+          servicer.ReadChapter,
+          request_deserializer=garuda__pb2.ID.FromString,
+          response_serializer=garuda__pb2.Chapter.SerializeToString,
+      ),
+      'CreateChapter': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateChapter,
+          request_deserializer=garuda__pb2.Chapter.FromString,
+          response_serializer=garuda__pb2.Chapter.SerializeToString,
+      ),
+      'ReadChaptersFilter': grpc.unary_stream_rpc_method_handler(
+          servicer.ReadChaptersFilter,
+          request_deserializer=garuda__pb2.Void.FromString,
+          response_serializer=garuda__pb2.Chapter.SerializeToString,
+      ),
+      'DeletePerson': grpc.unary_unary_rpc_method_handler(
+          servicer.DeletePerson,
+          request_deserializer=garuda__pb2.ID.FromString,
+          response_serializer=garuda__pb2.Void.SerializeToString,
+      ),
+      'UpdatePerson': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdatePerson,
+          request_deserializer=garuda__pb2.Person.FromString,
+          response_serializer=garuda__pb2.Void.SerializeToString,
+      ),
+      'ReadPerson': grpc.unary_unary_rpc_method_handler(
+          servicer.ReadPerson,
+          request_deserializer=garuda__pb2.ID.FromString,
+          response_serializer=garuda__pb2.Person.SerializeToString,
+      ),
+      'CreatePerson': grpc.unary_unary_rpc_method_handler(
+          servicer.CreatePerson,
+          request_deserializer=garuda__pb2.Person.FromString,
+          response_serializer=garuda__pb2.Person.SerializeToString,
+      ),
+      'ReadPeopleFilter': grpc.unary_stream_rpc_method_handler(
+          servicer.ReadPeopleFilter,
+          request_deserializer=garuda__pb2.Void.FromString,
+          response_serializer=garuda__pb2.Person.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
