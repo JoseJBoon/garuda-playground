@@ -1,4 +1,4 @@
-# [Garuda]((https://github.com/dhilipsiva/garuda))
+# Garuda [*]((https://github.com/dhilipsiva/garuda))
 Automagically Exposing Djagno ORM over gRPC for microservices written in any other languages.
 
 # Playground
@@ -74,19 +74,17 @@ rpc files contain the code logic for the server to execute when requested
 
 auto_garuda is a collection of all the services in a single class and is used by the grpc server when executing add_GarudaServicer_to_server.
 
-# section
+# Errors/Bugs
 In the garuda command there is function called hacky.
 `str(field.related_model).split(".")[-1].split("'")[0]`
 
-I think the solution is:
+I think the solution might be:
 `field.related_model().__class__.__name__`
 
 DateTime fields are not handled correctly by the to_dict() functions.
 DateTime field gets converted to string in .proto but the string does not get converted back to datetime.
 
 Problem with an enum not being generated into the protobuf
-
-**Foreign** key is misspelled.
 
 bug: ACTION_FLAG_CHOICES (enum) of EntryLog does not get created within the .proto
 hacky can be changed to:
