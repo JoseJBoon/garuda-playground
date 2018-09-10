@@ -1,5 +1,6 @@
-# Garuda [*]((https://github.com/dhilipsiva/garuda))
+# Garuda
 Automagically Exposing Djagno ORM over gRPC for microservices written in any other languages.
+[link]((https://github.com/dhilipsiva/garuda))
 
 # Playground
 Welcome, this is a playground for the Garuda package written by dhilipsiva.
