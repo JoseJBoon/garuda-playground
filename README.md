@@ -35,7 +35,7 @@ pip install garuda
 ```
 OR
 
-Clone the repository (you can also clone mine: https://github.com/JoseJBoon/garuda-playground.git)
+Clone the repository (you can also clone mine): https://github.com/JoseJBoon/garuda-playground.git)
 ```bash
 git clone https://github.com/dhilipsiva/garuda.git garuda
 cd garuda
